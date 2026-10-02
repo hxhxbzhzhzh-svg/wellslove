@@ -49,7 +49,7 @@ def page(fn,title,desc,body,active="",script=""):
     foot_l="".join(f'<li><a href="{k}.html">{t}</a></li>' for k,t in LEG)
     foot_c="".join(f'<li><a href="category-{k}.html">{v}</a></li>' for k,v in CATS.items())
     h=f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{E(title)} | Wells Love</title><meta name="description" content="{E(desc)}"><link rel="canonical" href="https://wellslove.com/{fn if fn!='index.html' else ''}">
+<title>{E(title)} | Wells Love</title><meta name="description" content="{E(desc)}"><link rel="canonical" href="https://wellslovehub.com/{fn if fn!='index.html' else ''}">
 <meta property="og:title" content="{E(title)} | Wells Love"><meta property="og:description" content="{E(desc)}">{FONTS}<link rel="stylesheet" href="style.css"></head><body>
 <header><div class="wrap nav"><a href="index.html" class="logo"><span class="mark">W</span> Wells Love</a><ul>{nav}</ul></div></header>
 <main>{body}</main>
@@ -175,18 +175,18 @@ page("index.html","College ROI Calculator, Finance Careers & University Insights
 # ---------------- legal ----------------
 LT={
 "about":("About Wells Love","<p>Wells Love is an independent information portal for students and young professionals: calculators plus editorial guides on college ROI, universities, careers and personal finance.</p><p>Tool outputs are estimates; articles are general education, not individualized advice.</p>"),
-"privacy":("Privacy Policy","<p>Last updated: September 27, 2026.</p><h2>Information we collect</h2><p>Contact messages you send us, and standard technical data (IP address, browser, pages viewed) via logs, analytics and cookies. Calculators run in your browser and do not send inputs to a server.</p><h2>Advertising</h2><p>We may use Google AdSense; Google and partners may use cookies to serve ads based on prior visits.</p><h2>Your rights</h2><p>Depending on your region (GDPR, UK GDPR, CCPA/CPRA) you may request access, correction or deletion.</p><h2>Children</h2><p>The site is not directed to children under 13.</p><p>Contact: <a href=\"mailto:privacy@wellslove.com\">privacy@wellslove.com</a></p>"),
+"privacy":("Privacy Policy","<p>Last updated: September 27, 2026.</p><h2>Information we collect</h2><p>Contact messages you send us, and standard technical data (IP address, browser, pages viewed) via logs, analytics and cookies. Calculators run in your browser and do not send inputs to a server.</p><h2>Advertising</h2><p>We may use Google AdSense; Google and partners may use cookies to serve ads based on prior visits.</p><h2>Your rights</h2><p>Depending on your region (GDPR, UK GDPR, CCPA/CPRA) you may request access, correction or deletion.</p><h2>Children</h2><p>The site is not directed to children under 13.</p><p>Contact: <a href=\"mailto:privacy@wellslovehub.com\">privacy@wellslovehub.com</a></p>"),
 "terms":("Terms of Service","<p>Last updated: September 27, 2026.</p><h2>Informational service</h2><p>Content and calculators are educational and are not financial, legal or tax advice.</p><h2>No guarantees</h2><p>We do not guarantee salary, employment, admission, loan approval or any outcome.</p><h2>Acceptable use</h2><p>Do not misuse, scrape abusively or attempt unauthorized access.</p><h2>Liability</h2><p>To the extent permitted by law, we are not liable for indirect or consequential damages.</p>"),
 "cookies":("Cookie Policy","<p>Last updated: September 27, 2026.</p><p>We may use essential, preference, analytics and advertising cookies, including third-party Google advertising technologies. You can manage or delete cookies in your browser settings; blocking some may affect functionality.</p>"),
 "advertiser":("Advertiser Disclosure","<p>Wells Love may earn revenue from advertising such as Google AdSense. Ads do not imply endorsement and do not influence our calculators. Material affiliate relationships will be disclosed on the relevant page.</p>"),
-"contact":("Contact Wells Love","<p>General questions, privacy requests, corrections and advertising: <a href=\"mailto:contact@wellslove.com\">contact@wellslove.com</a>.</p><p>Technical support: <a href=\"mailto:support@wellslove.com\">support@wellslove.com</a>.</p>"),
+"contact":("Contact Wells Love","<p>General questions, privacy requests, corrections and advertising: <a href=\"mailto:contact@wellslovehub.com\">contact@wellslovehub.com</a>.</p><p>Technical support: <a href=\"mailto:support@wellslovehub.com\">support@wellslovehub.com</a>.</p>"),
 }
 for k,(t,b) in LT.items():
     page(f"{k}.html",t,t+" — Wells Love",f'<section class="section"><div class="wrap art"><p class="eyebrow">LEGAL &amp; COMPANY</p><h1 style="font-size:36px;margin:8px 0 18px">{t}</h1>{b}</div></section>',"about.html" if k=="about" else "")
 exec(open("/home/claude/extra.py",encoding="utf-8").read())
 exec(open("enrich.py",encoding="utf-8").read())
 open(f"{OUT}/style.css","w").write(CSS)
-open(f"{OUT}/robots.txt","w").write("User-agent: *\nAllow: /\nSitemap: https://wellslove.com/sitemap.xml\n")
+open(f"{OUT}/robots.txt","w").write("User-agent: *\nAllow: /\nSitemap: https://wellslovehub.com/sitemap.xml\n")
 fs=sorted(f for f in os.listdir(OUT) if f.endswith(".html"))
-open(f"{OUT}/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+"".join(f"<url><loc>https://wellslove.com/{'' if f=='index.html' else f}</loc></url>" for f in fs)+"</urlset>")
+open(f"{OUT}/sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+"".join(f"<url><loc>https://wellslovehub.com/{'' if f=='index.html' else f}</loc></url>" for f in fs)+"</urlset>")
 print(len(fs),"pages")

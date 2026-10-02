@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://wellslove.com/sitemap.xml
+Sitemap: https://wellslovehub.com/sitemap.xml
