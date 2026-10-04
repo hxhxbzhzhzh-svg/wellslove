@@ -50,4 +50,5 @@ $("loanCurrency").addEventListener("change",function(e){sym=e.target.value;calc(
 $("loanUnit").addEventListener("change",calc);
 ["loanAmount","loanRate","loanTerm"].forEach(function(i){$(i).addEventListener("input",calc)});
 document.querySelectorAll("[data-p]").forEach(function(b){b.addEventListener("click",function(){var p=b.dataset.p.split(",");$("loanAmount").value=p[0];$("loanRate").value=p[1];$("loanTerm").value=p[2];$("loanUnit").value="years";calc()})});
+try{var q=new URLSearchParams(location.search);if(q.get("amount")){$("loanAmount").value=q.get("amount");if(q.get("rate"))$("loanRate").value=q.get("rate");if(q.get("term")){$("loanTerm").value=q.get("term");$("loanUnit").value="years"}}}catch(e){}
 calc()})();</script></body></html>
